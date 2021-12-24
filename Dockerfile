@@ -1,10 +1,10 @@
 FROM debian:10.8
 
-COPY CV /code
+# COPY CV /code
 
 RUN apt-get update
 
-RUN cd /code && echo 'lololoshka' >super.txt
+# RUN cd /code && echo 'lololoshka' >super.txt
 
 # RUN apt-get install -y texlive-full
 
