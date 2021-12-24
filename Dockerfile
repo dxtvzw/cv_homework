@@ -1,7 +1,11 @@
 FROM debian:10.8
 
-RUN apt-get update && apt-get install tldr --yes --no-install-recommends
+COPY CV /code
 
-COPY tex_files /kek
+RUN apt-get update
+
+RUN apt-get install -y texlive-full
+
+RUN cd /code && pdflatex -interaction=nonstopmode main.tex
 
 CMD [ "bash" ]
