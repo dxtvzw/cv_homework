@@ -6,5 +6,5 @@ jobs:
   hello_world_job:
     runs-on: ubuntu-latest
     steps:
-      run: touch lalala.txt
-      run: echo 'kek'>lalala.txt
+      - run: touch lalala.txt
+      - run: echo 'kek'>lalala.txt
