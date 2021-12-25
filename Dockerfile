@@ -1,6 +1,6 @@
 FROM debian:10.8
 
-# docker run -v "$PWD"/CV:/code smth...
+# docker run -v "$PWD"/CV:/temp smth...
 
 COPY CV /code
 

@@ -17,13 +17,14 @@ jobs:
         run: |
           rm CV/main.pdf
           docker build -t image .
-          docker run -v "$PWD"/CV:/temp -it image
+          docker run -v "$PWD"/CV:/temp -i image
           cp /code/main.pdf /temp/main.pdf
           exit
-          git status
-          ls
-          cd CV
-          ls
+        
+      - name: Committing changes
+        run:
+          git add CV/main.pdf
+          git commit -m 'LOL'
 #          touch super_kek.txt
 #          echo 'hello world'>super_kek.txt
 #          git add super_kek.txt
