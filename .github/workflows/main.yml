@@ -37,6 +37,10 @@ jobs:
           git config --global user.email "zimanovalikhan07@gmail.com"
           git config --global user.name "Alikhan Zimanov"
         
+      - name: Creating final resume file
+        run: |
+          cp CV/main.pdf resume.pdf
+
       - name: Deploy to pages
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
