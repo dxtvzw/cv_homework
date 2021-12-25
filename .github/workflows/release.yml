@@ -5,8 +5,7 @@ on: [ push ]
 jobs:
   workflow_run:
     workflows: ["Main workflow"]
-    types:
-      - completed
+    
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
