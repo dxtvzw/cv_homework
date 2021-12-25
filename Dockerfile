@@ -4,6 +4,8 @@ FROM debian:10.8
 
 COPY CV /code
 
+COPY entrypoint.sh /entrypoint.sh
+
 RUN apt-get update
 
 #RUN apt-get install -y texlive-full
@@ -12,6 +14,6 @@ RUN apt-get update
 
 RUN touch /code/main.pdf
 
-
-
 CMD [ "bash" ]
+
+ENTRYPOINT ["/entrypoint.sh"]
