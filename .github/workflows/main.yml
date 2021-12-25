@@ -39,5 +39,9 @@ jobs:
         
       - name: Committing changes to github pages
         run: |
-          git pull
+          git branch new
+          git checkout new
+          git cp CV/main.pdf resume.pdf
+          git add --all
+          git commit -m 'Kek'
           git push origin main:to_pages
