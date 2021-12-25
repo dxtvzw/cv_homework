@@ -44,4 +44,4 @@ jobs:
           cp CV/main.pdf resume.pdf
           git add --all
           git commit -m 'Kek'
-          git push origin new:to_pages
+          git push -f origin new:to_pages
