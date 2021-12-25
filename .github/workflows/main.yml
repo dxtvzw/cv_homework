@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
+      - name: Docker part
+        run: |
           docker build -t image .
-          touch /temp
+          docker run -v "$PWD"/CV:/code image
