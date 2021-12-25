@@ -15,6 +15,7 @@ jobs:
     - name: Build pdf in docker
       run: |
         rm CV/main.log
+        touch testing_something.txt
 #        rm CV/main.pdf
 #        docker build -t image .
 #        docker run -v "$PWD"/CV:/temp image
@@ -23,28 +24,26 @@ jobs:
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add CV/main.pdf
-        git add CV/main.log
         git commit -m "Add changes" -a
 
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
+        branch: ${{ github.ref }}
 
   pushing_to_pages:
     needs: compiling_pdf
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v2.3.1
 
       - name: Update resume on pages
         run: |
           cp CV/main.pdf resume.pdf
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: to_pages
