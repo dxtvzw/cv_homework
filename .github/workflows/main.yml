@@ -27,25 +27,18 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git commit -m "Add changes" -a
 
-    - name: Push changes
+    - name: Push changes to main branch
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
 
-  pushing_to_pages:
-    needs: compiling_pdf
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-
-      - name: Update resume on pages
+    - name: Update resume on pages
         run: |
           cp CV/main.pdf resume.pdf
           git add --all
 
-      - name: Deploy
+    - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: to_pages
