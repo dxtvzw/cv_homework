@@ -34,12 +34,12 @@ jobs:
         branch: ${{ github.ref }}
 
     - name: Update resume on pages
-        run: |
-          cp CV/main.pdf resume.pdf
-          git add --all
+      run: |
+        cp CV/main.pdf resume.pdf
+        git add --all
 
     - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: to_pages
-          folder: .
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: to_pages
+        folder: .
