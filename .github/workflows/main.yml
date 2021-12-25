@@ -14,12 +14,10 @@ jobs:
 
     - name: Build pdf in docker
       run: |
-        rm CV/main.log
-        touch testing_something.txt
+        rm CV/main.pdf
+        docker build -t image .
+        docker run -v "$PWD"/CV:/temp image
         git add --all
-#        rm CV/main.pdf
-#        docker build -t image .
-#        docker run -v "$PWD"/CV:/temp image
 
     - name: Commit files
       run: |
