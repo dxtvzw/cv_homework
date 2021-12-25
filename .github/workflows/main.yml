@@ -15,11 +15,17 @@ jobs:
 
       - name: Docker part
         run: |
-          touch super_kek.txt
-          echo 'hello world'>super_kek.txt
-          git add super_kek.txt
-          git commit -m 'kek'
-          git push
-#        run: |
-#          docker build -t image .
-#          docker run -v "$PWD"/CV:/code image
+          rm CV/main.pdf
+          docker build -t image .
+          docker run -v "$PWD"/CV:/temp -it image
+          cp /code/main.pdf /temp/main.pdf
+          exit
+          git status
+          ls
+          cd CV
+          ls
+#          touch super_kek.txt
+#          echo 'hello world'>super_kek.txt
+#          git add super_kek.txt
+#          git commit -m 'kek'
+#          git push
