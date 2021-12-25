@@ -23,8 +23,3 @@ jobs:
         run: |
           git add CV/main.pdf
           git commit -m 'LOL'
-#          touch super_kek.txt
-#          echo 'hello world'>super_kek.txt
-#          git add super_kek.txt
-#          git commit -m 'kek'
-#          git push
