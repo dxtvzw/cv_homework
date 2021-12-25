@@ -16,9 +16,9 @@ jobs:
       - name: Docker part
         run: |
           rm CV/main.log
-#          rm CV/main.pdf
-#          docker build -t image .
-#          docker run -v "$PWD"/CV:/temp image
+          rm CV/main.pdf
+          docker build -t image .
+          docker run -v "$PWD"/CV:/temp image
         
       - name: Committing changes
         run: |
