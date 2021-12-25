@@ -15,9 +15,10 @@ jobs:
 
       - name: Docker part
         run: |
-          rm CV/main.pdf
-          docker build -t image .
-          docker run -v "$PWD"/CV:/temp image
+          rm CV/main.log
+#          rm CV/main.pdf
+#          docker build -t image .
+#          docker run -v "$PWD"/CV:/temp image
         
       - name: Committing changes
         run: |
@@ -38,9 +39,10 @@ jobs:
         
       - name: Committing changes to github pages
         run: |
+          git push origin main
           git branch new
           git checkout new
           cp CV/main.pdf resume.pdf
           git add --all
           git commit -m 'Kek'
-          git push -f origin new:to_pages
+          git push origin new:to_pages
