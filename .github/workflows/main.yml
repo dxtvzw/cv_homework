@@ -16,6 +16,7 @@ jobs:
       run: |
         rm CV/main.log
         touch testing_something.txt
+        git add --all
 #        rm CV/main.pdf
 #        docker build -t image .
 #        docker run -v "$PWD"/CV:/temp image
@@ -42,6 +43,7 @@ jobs:
       - name: Update resume on pages
         run: |
           cp CV/main.pdf resume.pdf
+          git add --all
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
