@@ -39,4 +39,5 @@ jobs:
         
       - name: Committing changes to github pages
         run: |
+          git pull
           git push origin main:to_pages
