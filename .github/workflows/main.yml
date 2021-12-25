@@ -14,14 +14,17 @@ jobs:
 
     - name: Build pdf in docker
       run: |
-        rm CV/main.pdf
-        docker build -t image .
-        docker run -v "$PWD"/CV:/temp image
+        rm CV/main.log
+#        rm CV/main.pdf
+#        docker build -t image .
+#        docker run -v "$PWD"/CV:/temp image
 
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        git add CV/main.pdf
+        git add CV/main.log
         git commit -m "Add changes" -a
 
     - name: Push changes
@@ -42,6 +45,7 @@ jobs:
     - name: Changing resume on pages
       run: |
         cp CV/main.pdf resume.pdf
+        git add resume.pdf
 
     - name: Commit files
       run: |
