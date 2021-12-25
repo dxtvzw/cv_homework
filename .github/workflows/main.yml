@@ -20,7 +20,7 @@ jobs:
           docker run -v "$PWD"/CV:/temp image
         
       - name: Committing changes
-        run:
+        run: |
           git add CV/main.pdf
           git commit -m 'LOL'
 #          touch super_kek.txt
