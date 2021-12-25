@@ -1,6 +1,6 @@
 name: Main workflow
 
-on: [push]
+on: [ push ]
 
 jobs:
   hello_world_job:
@@ -15,11 +15,11 @@ jobs:
 
       - name: Docker part
         run: |
-          rm CV/main.pdf
-          docker build -t image .
-          docker run -v "$PWD"/CV:/temp image
+#          rm CV/main.pdf
+#          docker build -t image .
+#          docker run -v "$PWD"/CV:/temp image
         
       - name: Committing changes
         run: |
           git add CV/main.pdf
-          git commit -m 'LOL'
+          git commit -m 'Hmm'
