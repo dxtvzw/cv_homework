@@ -39,7 +39,4 @@ jobs:
         
       - name: Committing changes to github pages
         run: |
-          cp CV/main.pdf resume.pdf
-          git add resume.pdf
-          git commit -m 'LOL'
           git push origin main:to_pages
