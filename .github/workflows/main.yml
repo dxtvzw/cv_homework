@@ -42,5 +42,4 @@ jobs:
           cp CV/main.pdf resume.pdf
           git add resume.pdf
           git commit -m 'LOL'
-          git checkout to_pages
-          git push origin to_pages
+          git push origin main:to_pages
