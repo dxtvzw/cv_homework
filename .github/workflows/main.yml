@@ -15,13 +15,13 @@ jobs:
 
       - name: Docker part
         run: |
-          rm main.log
+          rm CV/main.log
 #          rm CV/main.pdf
 #          docker build -t image .
 #          docker run -v "$PWD"/CV:/temp image
         
       - name: Committing changes
         run: |
-          git add main.log
+          git add CV/main.log
           git add CV/main.pdf
           git commit -m 'Hmm'
