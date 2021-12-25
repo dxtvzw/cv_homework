@@ -37,12 +37,8 @@ jobs:
           git config --global user.email "zimanovalikhan07@gmail.com"
           git config --global user.name "Alikhan Zimanov"
         
-      - name: Committing changes to github pages
-        run: |
-          git push origin main
-          git branch new
-          git checkout new
-          cp CV/main.pdf resume.pdf
-          git add --all
-          git commit -m 'Kek'
-          git push origin new:to_pages
+      - name: Deploy to pages
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: to_pages
+          folder: CV/main.pdf
