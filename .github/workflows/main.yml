@@ -1,30 +1,34 @@
 name: Main workflow
 
 on: [ push ]
-
+x
 jobs:
   compiling_pdf:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-      - name: Setup github config
-        run: |
-          git config --global user.email "zimanovalikhan07@gmail.com"
-          git config --global user.name "Alikhan Zimanov"
+    - name: Build pdf in docker
+      run: |
+        rm CV/main.pdf
+        docker build -t image .
+        docker run -v "$PWD"/CV:/temp image
 
-      - name: Docker part
-        run: |
-          rm CV/main.log
-          rm CV/main.pdf
-          docker build -t image .
-          docker run -v "$PWD"/CV:/temp image
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -m "Add changes" -a
         
-      - name: Committing changes
-        run: |
-          git add CV/main.log
-          git add CV/main.pdf
-          git commit -m 'Hmm'
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
 
   pushing_to_pages:
     needs: compiling_pdf
