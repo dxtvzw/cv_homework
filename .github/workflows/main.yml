@@ -37,24 +37,15 @@ jobs:
     needs: compiling_pdf
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
 
-    - name: Changing resume on pages
-      run: |
-        cp CV/main.pdf resume.pdf
-        git add resume.pdf
+      - name: Update resume on pages
+        run: |
+          cp CV/main.pdf resume.pdf
 
-    - name: Commit files
-      run: |
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git commit -m "Add changes" -a
-
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: to_pages
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: to_pages
+          folder: .
