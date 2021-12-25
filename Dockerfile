@@ -1,6 +1,6 @@
 FROM debian:10.8
 
-# COPY CV /code
+COPY CV /code
 
 RUN apt-get update
 
