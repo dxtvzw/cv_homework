@@ -18,8 +18,6 @@ jobs:
           rm CV/main.pdf
           docker build -t image .
           docker run -v "$PWD"/CV:/temp image
-          cp /code/main.pdf /temp/main.pdf
-          exit
         
       - name: Committing changes
         run:
