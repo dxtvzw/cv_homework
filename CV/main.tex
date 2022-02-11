@@ -19,76 +19,41 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+\documentclass[11pt,a4paper,sans]{moderncv}
 
-\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\moderncvstyle{classic}
+\moderncvcolor{purple}
 
-\moderncvstyle{banking} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{purple} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{lipsum}
 
 \usepackage[scale=0.75]{geometry} % Reduce document margins
 %\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
 
-\usepackage{selinput}
-\SelectInputMappings{%
-  adieresis={ä},
-  eacute={é},
-  Lcaron={Ľ},
-}
+\firstname{Alikhan}
+\familyname{Zimanov}
 
-%----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION SECTION
-%----------------------------------------------------------------------------------------
-
-\firstname{Alikhan} % Your first name
-\familyname{Zimanov} % Your last name
-
-% All information in this block is optional, comment out any lines you don't need
 \title{Résumé}
 
 \address{Moscow}{Russia}
 \mobile{+7 (985) 333-78-16}
 \email{zimanovalikhan07@gmail.com}
 
-
- % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
-
-% \photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
-
-
-%----------------------------------------------------------------------------------------
-
 \begin{document}
 
-\makecvtitle % Print the CV title
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+\makecvtitle
 
 \section{Education}
 
-\cventry{2020-2024}{National Research University Higher School of Economics}{Sophomore}{}{\textit{}}{Applied Mathematics and Information Science}  % Arguments not required can be left empty
-
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
+\cventry{2020-2024}{National Research University Higher School of Economics}{Sophomore}{}{\textit{}}{Applied Mathematics and Information Science}
 
 \section{Experience}
 
-\cventry{2020}{SRMC and APMO in Kazakhstan}{\textbf{Jury}}{Almaty, Kazakhstan}{}{Conducting both olympiads in Kazakhstan region and evaluating students' works} 
-
-
-%----------------------------------------------------------------------------------------
-%	AWARDS SECTION
-%----------------------------------------------------------------------------------------
+\cventry{2020}{SRMC and APMO in Kazakhstan}{\textbf{Jury}}{Almaty, Kazakhstan}{}{Conducting both olympiads in Kazakhstan region and evaluating students' solutions} 
 
 \section{Awards}
+
+\cvitem{2018}{Asian Pacific Mathematics Olympiad -- Bronze Medal}
 
 \cvitem{2018}{International Mathematical Olympiad -- Bronze Medal}
 
@@ -98,38 +63,12 @@
 
 \cvitem{2021}{The 2021 Moscow Regional Contest -- First Award}
 
-%----------------------------------------------------------------------------------------
-%	COMPUTER SKILLS SECTION
-%----------------------------------------------------------------------------------------
+\cvitem{2021}{Google Code Jam Round 3 -- 281st place}
 
 \section{Computer skills}
 
 \cvitem{Basic}{Python, GDB}
-\cvitem{Intermediate}{Git, Docker, LaTeX, Shell}
+\cvitem{Intermediate}{Git, Docker, LaTeX, Shell, C, Assembly}
 \cvitem{Advanced}{C++}
-
-%----------------------------------------------------------------------------------------
-%	COMMUNICATION SKILLS SECTION
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-%	COVER LETTER
-%----------------------------------------------------------------------------------------
-
-% To remove the cover letter, comment out this entire block
-
-%\clearpage
-
-%\recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
-%\date{\today} % Letter date
-%\opening{Dear Sir or Madam,} % Opening greeting
-%\closing{Sincerely yours,} % Closing phrase
-%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
-
-%\makelettertitle % Print letter title
-
-%\makeletterclosing % Print letter signature
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
