@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM debian:10.8
 
 COPY CV /code
 
